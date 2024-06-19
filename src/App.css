@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+*{
+  font-family: "Inter", sans-serif;
+}
+
+.researchImage-sciOrScie {
+  animation: floating 3s infinite ease-in-out;
+}
+
+.researchImage-scopus {
+  animation: floating 3s infinite ease-in-out;
+}
+
+.researchImage-patent {
+  animation: floating 3s infinite ease-in-out;
+}
+
+.researchImage-scholar {
+  animation: floating 3s infinite ease-in-out;
+}
+
+.researchImage-publonsCitation {
+  animation: floating 3s infinite ease-in-out;
+}
+
+.researchImage-scopusCitation {
+  animation: floating 3s infinite ease-in-out;
+
+}
+
+.researchImage-books {
+  animation: floating 3s infinite ease-in-out;
+}
+
+.peopleCard {
+  width: 400px !important;
+  /* height: 300px !important; */
+}
+
+#card > .ant-card-body {
+  height: 100%;
+}
+
+@keyframes floating {
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translate(0, 5px); }
+  100%   { transform: translate(0, -0px); }    
+}
+
+@media only screen and (max-width: 600px) {
+  .peopleCard {
+    width: 300px !important;
+    /* height: 200px !important; */
+  }
+}

@@ -1,0 +1,15 @@
+{
+    "projects": [
+        {
+            "title": "Developing a Modified Deep Belief Network with Metaheuristic Optimization Algorithm for Predicting Face Emotion and Sentimental Analysis using Electroencephalogram",
+            "description": "This funding will support hosting outstanding international researchers. Associate Professor Dr. Neelakandan Subramani will join the lab as a Research Professor for 1 year through this funding.",
+            "fundingSource": "National Research Foundation of Korea (NRFK)",
+            "duration": "2023-2024"
+        },
+        {
+            "title": "Development of Deep Learning Model to Evaluate Cognitive Status based on EEG data with Wavelet Transform Techniques",
+            "fundingSource": "National Research Foundation of Korea (NRFK)",
+            "duration": "Sep 2024 to Feb 2026"
+        }
+    ]
+}

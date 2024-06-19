@@ -1,0 +1,42 @@
+{
+    "academicAchievements": [
+        {
+            "year": "2015-2017",
+            "desc": "Received the Best Faculty award for the academic year 2015-2016, 2016-2017 at Jeppiaar Institute of Technology in CSE Department"
+        },
+        {
+            "year": "2017-2019",
+            "desc": "Received the Best Faculty award for the academic year 2017-2018, 2018-2019 at Jeppiaar Institute of Technology in IT Department."
+        },
+        {
+            "year": "2016-2018",
+            "desc": "Recognized as Award of Appreciation for Produced 100% Result in Anna University Exam for the academic year 2016-17, 2017-18 at Jeppiaar Institute of Technology."
+        },
+        {
+            "year": "2016",
+            "desc": "Infosys Campus Connect Partners in Success 2016 recognized as BRONZE partner Faculty under Inspire-The Campus Connect Faculty Partnership Model."
+        },
+        {
+            "year": "2019",
+            "desc": "Received “Confederation of Elite Academicians of IIDC 2019” for Outstanding Contributions from Department of Science and Technology and Texas Instruments powered by AICTE mission."
+        },
+        {
+            "year": "2020",
+            "desc": "Smart India Hackathon coordinator and mentor for 2020 (SIH-2020). Team Area51 (PJ239) under my guidance received 1-Lakh Cash award in SIH2020 Grand Finale – Web Application for Grey Market Complaint."
+        }
+    ],
+    "industryTraining": [
+        {
+            "year": "2019",
+            "desc": "Data Science using Python special training attended from November 18-11-2019 to 29-11-2019."
+        },
+        {
+            "year": "2018",
+            "desc": "Machine Learning Training was attended at Geoinsyssoft From June 2018 to July 2018."
+        },
+        {
+            "year": "2020",
+            "desc": "PL-SQL training attended From November 02-11-2020 to 30-11-2020 at Greentechnologies."
+        }
+    ]
+}

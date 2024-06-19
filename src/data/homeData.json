@@ -1,0 +1,64 @@
+{
+    "heroSection": {
+        "title": "Data Scientist & Big Data Analyst",
+        "description": [
+            "Data scientist and Big Data analyst with a proven track",
+            "record of extracting actionable insights from complex",
+            "datasets. Adept at leveraging advanced analytics to",
+            "drive informed decision-making."
+        ],
+        "buttonText": "LET’S TALK"
+    },
+    "meMyself": {
+        "title": "ME & MYSELF",
+        "name": "Dr.S.NEELAKANDAN M.E., Ph.D.",
+        "position": "Associate Professor",
+        "department": "Department of Computer Science and Engineering",
+        "college": "R.M.K. Engineering College",
+        "achievementsText": "Achievements"
+    },
+    "achievements": [
+        {
+            "img": "bigData",
+            "title": "Big Data",
+            "percentage": 95
+        },
+        {
+            "img": "dataScience",
+            "title": "Data Science",
+            "percentage": 90
+        },
+        {
+            "img": "machineLearning",
+            "title": "Machine Learning",
+            "percentage": 90
+        },
+        {
+            "img": "cloudComputing",
+            "title": "Cloud Computing",
+            "percentage": 85
+        }
+    ],
+    "additionalAchievements": [
+        {
+            "percentage": 2,
+            "title": "WORLD’S TOP SCIENTIST"
+        },
+        {
+            "percentage": 17,
+            "title": "COURSE & INDUSTRY TRAINING"
+        },
+        {
+            "percentage": 3,
+            "title": "PROFESSIONAL SOCIETY MEMBERSHIP"
+        }
+    ],
+    "certificates": [
+        "certificate4",
+        "certificate1",
+        "certificate2",
+        "certificate3",
+        "certificate5",
+        "certificate6"
+    ]
+}

@@ -1,0 +1,55 @@
+{
+    "people": [
+        {
+            "name": "Dr. S.Neelakandan",
+            "position": "Research Professor",
+            "education": "HCT Lab",
+            "university": "Hanyang University",
+            "email": "drsnk1730@gmail.com",
+            "linkedin": "https://linkedin.com",
+            "imageUrl": "neelakandanImage"
+        }
+    ],
+    "Researchers": [
+        {
+            "name": "Mr. Shine Henry",
+            "position": "Assistant Professor",
+            "education": "Ph.D. in Information and Communication Engineering",
+            "university": "Anna University",
+            "researchArea": "Machine Learning and Artificial Intelligence",
+            "email": "shinehenry@example.com",
+            "linkedin": "https://linkedin.com",
+            "imageUrl": "shineHenryImage"
+        },
+        {
+            "name": "Ms. Indhumathi.C",
+            "position": "Assistant Professor",
+            "education": "Ph.D. in Information and Communication Engineering",
+            "university": "Anna University",
+            "researchArea": "Deep Learning and Biomedical Applications",
+            "email": "indhumathi@example.com",
+            "linkedin": "https://linkedin.com",
+            "imageUrl": "indhumathiImage"
+        },
+        {
+            "name": "Mr. Premkumar.R",
+            "position": "Assistant Professor",
+            "education": "Ph.D. in Information and Communication Engineering",
+            "university": "Anna University",
+            "researchArea": "Deep Learning and Biomedical Applications",
+            "email": "premkumar@example.com",
+            "linkedin": "https://linkedin.com",
+            "imageUrl": "premkumarImage"
+        }
+    ],
+    "graduateStudents": [
+        {
+            "name": "Mr. Thamaraiselvan.K",
+            "education": "M.E. Computer Science and Engineering",
+            "university": "R.M.K Engineering College",
+            "email": "thamaraiselvan@example.com",
+            "linkedin": "https://linkedin.com",
+            "imageUrl": "thamaraiselvanImage"
+        }
+    ]
+}
