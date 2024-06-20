@@ -88,7 +88,7 @@ export default function Header2() {
             window.location.pathname === "/research" ? "text-primaryRed" : ""
           }`}
         >
-          Research Topics
+          Research Activities
         </Link>
       </div>
       <div className="flex md:hidden pr-6  py-8 ">
@@ -136,7 +136,7 @@ export default function Header2() {
           </Link>
           <Link
             onClick={onClose} to={"/opportunities"} className=" display-block mb-4">
-            opportunities
+            Opportunities
           </Link>
 
           <Link
@@ -145,7 +145,7 @@ export default function Header2() {
           </Link>
           <Link
             onClick={onClose} to={"/research"} className=" display-block mb-4">
-            Research Topics
+            Research Activities
           </Link>
         </div>
       </Drawer>
