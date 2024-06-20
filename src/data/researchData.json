@@ -2,13 +2,13 @@
     {
         "key": "sciOrScie",
         "subject": "SCI/SCIE",
-        "number": "40",
+        "number": "64",
         "image": "sci"
     },
     {
         "key": "scopus",
         "subject": "Scopus",
-        "number": "49",
+        "number": "76",
         "image": "scopus",
         "link": "https://www.scopus.com/authid/detail.uri?authorId=57023847500"
     },
@@ -21,21 +21,21 @@
     {
         "key": "scholar",
         "subject": "Google Scholar",
-        "number": "1395",
+        "number": "2836",
         "image": "google_scholar",
         "link": "https://scholar.google.co.in/citations?user=i-kxW90AAAAJ&hl=en"
     },
     {
         "key": "publonsCitation",
         "subject": "Publons Citation",
-        "number": "1041",
+        "number": "1472",
         "image": "publon_citation",
         "link": "https://www.webofscience.com/wos/author/record/372979"
     },
     {
         "key": "scopusCitation",
         "subject": "Scopus Citation",
-        "number": "791",
+        "number": "2259",
         "image": "scopus_citation",
         "link": "https://www.scopus.com/authid/detail.uri?authorId=57023847500"
     },
