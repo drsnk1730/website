@@ -96,7 +96,7 @@ export default function Header() {
           </Link>
           <Link
             onClick={onClose} to={"/research"} className=" display-block mb-4">
-            Research Topics
+            Research Activities
           </Link>
         </div>
       </Drawer>
