@@ -113,10 +113,74 @@ import jp3 from "@assets/ai3.png";
 import jp4 from "@assets/ai4.png";
 import jp5 from "@assets/ai5.png";
 
+import scimeTechImg1 from "@assets/key1.png";
+import scimeTechImg2 from "@assets/key2.png";
+
 export default function News() {
   const [selectedImage, setSelectedImage] = useState(null)
   return (
     <div className="max-w-6xl mx-auto px-6 space-y-14">
+
+      {/* SciMeTech-SD-26 Keynote */}
+      <div className="mt-16 rounded-3xl bg-white px-6 py-10 shadow-2xl ring-1 ring-gray-200">
+
+        <h3 className="text-3xl font-bold mb-4 text-center text-teal-800">
+          🌍 Keynote Speaker – SciMeTech-SD-26
+        </h3>
+
+        <p className="text-gray-700 text-justify leading-relaxed mb-6">
+          Happy to join as a <span className="font-semibold text-teal-700">Keynote Speaker</span> at the 
+          <span className="font-semibold"> International Conference on Sciences, Methods and Technologies for Sustainable Development (SciMeTech-SD-26)</span>.
+        </p>
+
+        <p className="text-gray-700 text-justify leading-relaxed mb-6">
+          The conference is organized by the <span className="font-semibold">High School of Technology – Essaouira, Cadi Ayyad University</span>, 
+          in collaboration with academic and national partners.
+        </p>
+
+        {/* Event Details */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8 text-center">
+
+          <div className="bg-teal-50 rounded-2xl p-6 shadow-md">
+            <h4 className="text-lg font-semibold text-teal-800">📅 Date</h4>
+            <p className="text-gray-700 mt-2">May 17–19, 2026</p>
+          </div>
+
+          <div className="bg-teal-50 rounded-2xl p-6 shadow-md">
+            <h4 className="text-lg font-semibold text-teal-800">📍 Location</h4>
+            <p className="text-gray-700 mt-2">Essaouira, Morocco 🇲🇦</p>
+          </div>
+
+        </div>
+
+    
+
+        {/* Two Images */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+          {[scimeTechImg1, scimeTechImg2].map((img, idx) => (
+            <div
+              key={idx}
+              onClick={() => setSelectedImage(img)}
+              className="cursor-pointer group relative overflow-hidden rounded-2xl shadow-xl transition duration-500 hover:-translate-y-2 hover:scale-105"
+            >
+              <img
+                src={img}
+                alt={`SciMeTech Image ${idx + 1}`}
+                className="w-full h-[450px] object-contain bg-gray-50 rounded-2xl"
+              />
+
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition duration-300 flex items-center justify-center">
+                <span className="text-white opacity-0 group-hover:opacity-100 font-semibold text-lg">
+                  View
+                </span>
+              </div>
+            </div>
+          ))}
+
+        </div>
+
+      </div>
       {/* Japan Delegation Section */}
       <div className="mt-16 rounded-3xl bg-white px-6 py-10 shadow-2xl ring-1 ring-gray-200">
 
