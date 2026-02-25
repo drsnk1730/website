@@ -1,3 +1,4 @@
+import { useState } from "react"
 import eventPhoto1 from "@assets/event1.png";
 import eventPhoto2 from "@assets/event2.png";
 import eventPhoto3 from "@assets/event3.png";
@@ -93,10 +94,179 @@ import wel from "@assets/wel.png";
 
 import sihdec from "@assets/sihdec.png";
 
+import summit1 from "@assets/delhi1.png";
+import summit2 from "@assets/delhi2.png";
+import summit3 from "@assets/delhi3.png";
+import summit4 from "@assets/delhi4.png";
+
+import img1 from "@assets/imgai1.png";
+import img2 from "@assets/imgai2.png";
+import img3 from "@assets/imgai3.png";
+import img4 from "@assets/imgai4.png";
+import img5 from "@assets/imgai5.png";
+import img6 from "@assets/imgai6.png";
+import img7 from "@assets/imgai7.png";
+
+import jp1 from "@assets/ai1.png";
+import jp2 from "@assets/ai2.png";
+import jp3 from "@assets/ai3.png";
+import jp4 from "@assets/ai4.png";
+import jp5 from "@assets/ai5.png";
+
 export default function News() {
+  const [selectedImage, setSelectedImage] = useState(null)
   return (
     <div className="max-w-6xl mx-auto px-6 space-y-14">
+      {/* Japan Delegation Section */}
+      <div className="mt-16 rounded-3xl bg-white px-6 py-10 shadow-2xl ring-1 ring-gray-200">
 
+        <h3 className="text-3xl font-bold mb-4 text-center text-indigo-900">
+          🇯🇵 Meeting Distinguished Delegates from Japan
+        </h3>
+
+        <p className="leading-relaxed text-justify mb-6 text-gray-700">
+          It was a great honor to meet the distinguished delegates from Japan at the 
+          <span className="font-semibold text-purple-700"> AI Summit 2026</span>, held at 
+          <span className="font-semibold"> Bharat Mandapam, New Delhi</span>, 
+          from February 16–20, 2026.
+        </p>
+
+        <p className="leading-relaxed mb-6 text-gray-700">
+          I had the privilege of interacting with:
+        </p>
+
+        <ul className="space-y-3 mb-10 text-gray-800">
+          <li>• <span className="font-semibold">Shiho Nagano</span>, Director, Information Policy Planning, Ministry of Economy, Trade and Industry (METI), Japan</li>
+          <li>• <span className="font-semibold">Takumi Miyakawa</span>, Deputy Director, Ministry of Economy, Trade and Industry (METI), Japan</li>
+          <li>• <span className="font-semibold">Rentaro Iida</span>, Senior Manager, GPAI Tokyo Expert Support Center, National Institute of Information and Communications Technology (NICT), Japan</li>
+          <li>• <span className="font-semibold">Lucas Haywood</span>, Vice President, Global Strategy @ ONESTRUCTION - Japan</li>
+        </ul>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[jp1, jp2, jp3, jp4, jp5].map((photo, idx) => (
+            <div
+              key={idx}
+              onClick={() => setSelectedImage(photo)}
+              className="cursor-pointer group relative overflow-hidden rounded-2xl shadow-lg transition duration-500 hover:-translate-y-2 hover:scale-105"
+            >
+              <img
+                src={photo}
+                alt={`Japan Delegate ${idx + 1}`}
+                className="w-full h-72 object-cover"
+              />
+
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition duration-300 flex items-center justify-center">
+                <span className="text-white opacity-0 group-hover:opacity-100 font-semibold text-lg">
+                  View
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      {/* AI-Summit -2 */}
+      <div className="rounded-3xl bg-gradient-to-br from-purple-50 via-white to-indigo-100 px-6 py-10 shadow-2xl ring-1 ring-purple-200/40 backdrop-blur-lg">
+
+  {/* Heading */}
+  <h3 className="text-3xl font-extrabold mb-4 text-indigo-900 text-center">
+    AI Impact Summit 2026 – New Delhi
+  </h3>
+
+  {/* Content */}
+  <p className="text-gray-700 text-justify leading-relaxed mb-6">
+    I had the privilege of attending the <span className="font-semibold text-purple-700">AI Summit 2026</span>, held from 
+    <span className="font-semibold"> February 16–20, 2026</span>, in 
+    <span className="font-semibold"> New Delhi</span>, inaugurated by the Prime Minister of India alongside global leaders.
+    The event was organized by the <span className="font-semibold">Ministry of Electronics and Information Technology</span>, 
+    and it truly showcased the global impact of Artificial Intelligence.
+  </p>
+
+  <p className="text-gray-700 text-justify leading-relaxed mb-8">
+    India is rapidly emerging as the epicenter of technological growth and the AI revolution, with contributions from policymakers,
+    industry leaders, technology developers, and global experts. The summit featured 
+    <span className="font-semibold text-indigo-700"> 300 exhibitors</span>, 
+    <span className="font-semibold text-indigo-700"> 30 country experts</span>, and 
+    <span className="font-semibold text-indigo-700"> 500 global AI leaders</span>, 
+    all sharing insights on shaping the future of Artificial Intelligence.
+  </p>
+
+  {/* Stats Section */}
+  <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10 text-center">
+    {[
+      { number: "300+", label: "Exhibitors" },
+      { number: "30+", label: "Country Experts" },
+      { number: "500+", label: "Global AI Leaders" }
+    ].map((stat, idx) => (
+      <div key={idx} className="bg-white rounded-2xl p-6 shadow-lg hover:scale-105 transition duration-300">
+        <h4 className="text-3xl font-bold text-indigo-800">{stat.number}</h4>
+        <p className="text-gray-600 mt-2">{stat.label}</p>
+      </div>
+    ))}
+  </div>
+
+  {/* Image Gallery */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    {[img1, img2, img3, img4, img5, img6, img7].map((photo, idx) => (
+      <div
+        key={idx}
+        onClick={() => setSelectedImage(photo)}
+        className="cursor-pointer group relative overflow-hidden rounded-2xl shadow-xl transition duration-500 hover:-translate-y-2 hover:scale-105"
+      >
+        <img
+          src={photo}
+          alt={`AI Summit ${idx + 1}`}
+          className="w-full h-72 object-cover"
+        />
+
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition duration-300 flex items-center justify-center">
+          <span className="text-white opacity-0 group-hover:opacity-100 font-semibold text-lg">
+            View
+          </span>
+        </div>
+      </div>
+    ))}
+
+  </div>
+</div>
+      {/* AI-Summit */}
+
+
+      <div className="rounded-2xl bg-gradient-to-br from-indigo-50 via-white to-purple-100 px-6 py-8 shadow-2xl ring-1 ring-indigo-200/40 backdrop-blur-lg">
+
+  <h3 className="text-2xl font-extrabold mb-2 text-indigo-800">
+    February 2026 – AI Impact Summit
+  </h3>
+
+  <p className="text-indigo-900 mb-6 text-justify leading-relaxed">
+    I am happy to share that I will be attending the <span className="font-semibold text-purple-700">AI Impact Summit 2026</span>, scheduled from <span className="font-semibold">February 16–20, 2026</span>, at <span className="font-semibold">Bharat Mandapam, New Delhi</span>.  
+    The summit will be inaugurated by the Honorable Prime Minister of India and will feature eminent visionaries and global leaders from across the world, coming together to shape the future of Artificial Intelligence and emerging technologies.
+  </p>
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 my-8">
+
+  {[summit1, summit2, summit3, summit4].map((photo, idx) => (
+    <div
+      key={idx}
+      onClick={() => setSelectedImage(photo)}
+      className="cursor-pointer group relative overflow-hidden rounded-2xl shadow-xl ring-1 ring-indigo-200/40 transition duration-500 hover:-translate-y-2 hover:scale-105"
+    >
+      <img
+        src={photo}
+        alt={`AI Summit Photo ${idx + 1}`}
+        className="w-full h-72 object-contain bg-white p-3 transition duration-500 group-hover:scale-105"
+      />
+
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-indigo-900/80 to-transparent px-4 py-3">
+        {/* <span className="text-white font-semibold text-lg">
+          View Image
+        </span> */}
+      </div>
+    </div>
+  ))}
+
+</div>
+</div>
       {/* scholar */}
       <div className="rounded-2xl bg-gradient-to-br from-teal-50 via-white to-teal-100 px-6 py-8 shadow-2xl ring-1 ring-teal-200/40 backdrop-blur-lg">
         <h3 className="text-2xl font-extrabold mb-2 text-teal-900">February 2026</h3>
@@ -862,7 +1032,34 @@ Grateful for this experience and the chance to exchange ideas with researchers a
 
 
 
+{selectedImage && (
+  <div 
+    className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50"
+    onClick={() => setSelectedImage(null)}
+  >
+    <div 
+      className="relative max-w-6xl w-[95%]"
+      onClick={(e) => e.stopPropagation()}
+    >
 
+      {/* Close Button */}
+      <button
+        onClick={() => setSelectedImage(null)}
+        className="absolute -top-4 -right-4 bg-white text-black rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:scale-110 transition font-bold"
+      >
+        ✕
+      </button>
+
+      {/* Image */}
+      <img
+        src={selectedImage}
+        alt="Preview"
+        className="w-full max-h-[90vh] object-contain rounded-xl shadow-2xl bg-white"
+      />
+
+    </div>
+  </div>
+)}
 
 
       
