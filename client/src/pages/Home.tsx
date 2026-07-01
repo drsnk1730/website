@@ -76,173 +76,143 @@ function HeroSection({
   youtube,
 }) {
   return (
-    <motion.section
-      className="py-16 lg:py-24 relative overflow-hidden"
-      variants={sectionVariants}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.4 }}
-    >
-      {/* Subtle background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/80 via-blue-50/70 to-purple-50/60"></div>
-      
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start glass-card p-8 lg:p-12 rounded-3xl shadow-2xl backdrop-blur-xl bg-white/90 border border-white/60">
-          
-          {/* TEXT CONTENT FIRST - LEFT SIDE */}
-          <motion.div 
-            className="space-y-5 order-2 lg:order-1"
-            initial={{ x: -40, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
+    <section className="relative bg-[#f8f5f0] py-20 lg:py-28 overflow-hidden">
+      {/* Subtle warm texture overlay */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 right-0 w-[55%] h-full bg-[#1a1a2e]/[0.03] clip-hero" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#8b1a1a]/[0.04] rounded-full blur-3xl" />
+      </div>
+
+      <div className="container mx-auto px-5 lg:px-10 relative z-10">
+        <div className="grid lg:grid-cols-[1fr_auto] gap-12 lg:gap-20 items-center max-w-5xl mx-auto">
+
+          {/* TEXT */}
+          <motion.div
+            className="space-y-7"
+            initial={{ x: -30, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <div className="relative">
-              <h1 className="text-3xl lg:text-4xl xl:text-5xl font-black bg-gradient-to-r from-slate-900 via-indigo-900 to-blue-900 bg-clip-text text-transparent leading-tight tracking-tight">
-                {name}
-              </h1>
-              <motion.div 
-                className="absolute -bottom-1.5 left-0 w-20 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-              />
-            </div>
-            
-            <div className="space-y-2.5">
-              <p className="text-lg lg:text-xl text-purple-700 font-bold bg-purple-100/60 px-4 py-1.5 rounded-full inline-block shadow-sm">
-                {title}
-              </p>
-              <p className="text-base lg:text-lg text-gray-700 font-semibold leading-relaxed">{department}</p>
-              <p className="text-base lg:text-lg text-gray-700 leading-relaxed">{institution}</p>
+            {/* Eyebrow label */}
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-[2px] bg-[#8b1a1a] rounded-full" />
+              <span className="text-[0.72rem] font-['DM_Sans',sans-serif] font-semibold tracking-[0.18em] uppercase text-[#8b1a1a]">
+                Professor &amp; Researcher
+              </span>
             </div>
 
-            <motion.div 
+            {/* Name */}
+            <div>
+              <h1
+                className="font-['Lora',Georgia,serif] text-4xl lg:text-5xl xl:text-[3.5rem] font-bold text-[#1a1a2e] leading-[1.15] tracking-[-0.02em]"
+                data-testid="text-professor-name"
+              >
+                {name}
+              </h1>
+              <motion.div
+                className="mt-3 w-14 h-[3px] bg-[#8b1a1a] rounded-full"
+                initial={{ scaleX: 0, originX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              />
+            </div>
+
+            {/* Title & Info */}
+            <div className="space-y-1.5">
+              <p
+                className="font-['DM_Sans',sans-serif] text-lg font-semibold text-[#1a1a2e]/80"
+                data-testid="text-professor-title"
+              >
+                {title}
+              </p>
+              <p
+                className="font-['DM_Sans',sans-serif] text-base text-[#5a5248]"
+                data-testid="text-professor-department"
+              >
+                {department}
+              </p>
+              <p
+                className="font-['DM_Sans',sans-serif] text-base text-[#7a7060]"
+                data-testid="text-professor-institution"
+              >
+                {institution}
+              </p>
+            </div>
+
+            {/* CTA Buttons */}
+            <motion.div
               className="flex flex-wrap gap-3 pt-2"
-              initial={{ y: 15, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
+              initial={{ y: 12, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
             >
-              <Button className="group bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-xl px-7 py-5 text-base lg:text-lg font-semibold transform hover:-translate-y-1 transition-all duration-300 rounded-xl">
-                <Mail className="w-4 h-4 lg:w-5 lg:h-5 mr-2 group-hover:animate-pulse" />
-                <a href={`mailto:${email}`} className="flex items-center">
-                  Email
+              {email && (
+                <a
+                  href={`mailto:${email}`}
+                  data-testid="button-email"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#8b1a1a] text-white text-sm font-['DM_Sans',sans-serif] font-medium rounded-md hover:bg-[#a01e1e] transition-colors duration-200 shadow-sm hover:shadow-md"
+                >
+                  <Mail className="w-4 h-4" />
+                  Get in Touch
                 </a>
-              </Button>
-              <Button variant="outline" className="border-2 border-indigo-200 hover:border-indigo-400 hover:bg-indigo-50 px-7 py-5 text-base lg:text-lg font-semibold shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 rounded-xl" asChild>
-                <a href={linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center">
-                  <FaLinkedin className="w-4 h-4 lg:w-5 lg:h-5 mr-2" />
+              )}
+              {linkedin && (
+                <a
+                  href={linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="button-linkedin"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 border border-[#1a1a2e]/20 text-[#1a1a2e] text-sm font-['DM_Sans',sans-serif] font-medium rounded-md hover:border-[#8b1a1a] hover:text-[#8b1a1a] transition-colors duration-200 bg-white shadow-sm"
+                >
+                  <FaLinkedin className="w-4 h-4" />
                   LinkedIn
                 </a>
-              </Button>
+              )}
+              {youtube && (
+                <a
+                  href={youtube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="button-youtube"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 border border-[#1a1a2e]/20 text-[#1a1a2e] text-sm font-['DM_Sans',sans-serif] font-medium rounded-md hover:border-[#8b1a1a] hover:text-[#8b1a1a] transition-colors duration-200 bg-white shadow-sm"
+                >
+                  <FaYoutube className="w-4 h-4" />
+                  YouTube
+                </a>
+              )}
             </motion.div>
           </motion.div>
 
-          {/* 🚀 INNOVATIVE 3D FLOATING PHOTO BOX */}
-          <motion.div 
-            className="order-1 lg:order-2 flex justify-center lg:justify-end pt-8 lg:pt-0"
-            initial={{ scale: 0.8, rotate: -5, opacity: 0 }}
-            whileInView={{ scale: 1, rotate: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.2, type: "spring", bounce: 0.4 }}
+          {/* PHOTO */}
+          <motion.div
+            className="flex justify-center lg:justify-end"
+            initial={{ scale: 0.92, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
-            <div className="relative group">
-              
-              {/* ✨ Multi-layered dynamic glow */}
-              <motion.div
-                className="absolute -inset-6 lg:-inset-8 bg-gradient-to-r from-blue-300/40 via-indigo-300/30 to-purple-300/40 rounded-3xl blur-3xl opacity-60 group-hover:opacity-90 transition-all duration-1000"
-                animate={{ 
-                  scale: [1, 1.05, 1.02, 1], 
-                  rotate: [0, 1, -1, 0]
-                }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              />
-              
-              {/* 🎨 Secondary glow ring */}
-              <motion.div
-                className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-200/50 to-purple-200/50 blur-xl opacity-50 group-hover:opacity-80"
-                animate={{ scale: [0.95, 1.05, 0.95] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              />
-
-              {/* 🖼️ 3D PHOTO FRAME WITH GLASS EFFECT */}
-              <motion.div 
-                className="relative bg-gradient-to-br from-white/95 via-white/90 to-slate-50/80 rounded-2xl shadow-2xl lg:shadow-3xl border-4 border-white/90 backdrop-blur-xl group-hover:shadow-[0_35px_60px_-15px_rgba(59,130,246,0.3)] group-hover:border-blue-200/80 transition-all duration-700 hover:-translate-y-3 hover:rotate-1 z-20 overflow-hidden perspective-1000"
-                style={{ perspective: '1000px' }}
-                whileHover={{ 
-                  rotateX: 5, 
-                  rotateY: 5, 
-                  scale: 1.02,
-                  transition: { duration: 0.4, type: "spring" }
-                }}
-              >
-                {/* Inner glass container */}
-                <div className="relative w-60 h-72 lg:w-80 lg:h-96 p-6 lg:p-8 bg-gradient-to-br from-white/80 to-slate-50/40 backdrop-blur-md border border-white/60 rounded-2xl overflow-hidden">
-                  
-                  {/* Animated photo frame border */}
-                  <motion.div 
-                    className="absolute inset-0 bg-gradient-to-r from-blue-400/20 via-indigo-400/20 to-purple-400/20 rounded-2xl blur opacity-0 group-hover:opacity-60 transition-opacity duration-700"
-                    animate={{ pathLength: [0, 1] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                  />
-                  
-                  {/* ✨ Floating particles */}
-                  {Array.from({ length: 8 }).map((_, i) => (
-                    <motion.div
-                      key={i}
-                      className="absolute w-1 h-1 lg:w-1.5 lg:h-1.5 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-40"
-                      style={{
-                        left: `${10 + i * 12}%`,
-                        top: `${15 + (i % 3) * 20}%`,
-                      }}
-                      animate={{
-                        scale: [0, 1.5, 0],
-                        y: [0, -8, 0],
-                        opacity: [0.4, 0.8, 0.4]
-                      }}
-                      transition={{
-                        duration: 2 + i * 0.2,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                      }}
-                    />
-                  ))}
-                  
-                  {/* 📸 MAIN PHOTO */}
-                  <motion.img 
-                    src={photoUrl} 
-                    alt={name}
-                    className="w-full h-[90%] object-cover rounded-xl border-4 border-white/95 shadow-2xl absolute inset-0 mx-auto my-auto hover:scale-105 transition-transform duration-700"
-                    whileHover={{ 
-                      scale: 1.05, 
-                      rotate: 1,
-                      y: -4
-                    }}
-                    transition={{ duration: 0.5, type: "spring", bounce: 0.3 }}
-                  />
-                  
-                  {/* Photo corner fold effect */}
-                  <motion.div 
-                    className="absolute top-4 right-4 w-12 h-12 bg-gradient-to-tl from-white/90 to-slate-200/70 border border-white/80 rounded-lg shadow-lg rotate-[-15deg] opacity-80"
-                    animate={{ rotate: [-15, -20, -15] }}
-                    transition={{ duration: 3, repeat: Infinity }}
-                  />
-                  
-                </div>
-              </motion.div>
-              
-              {/* 💎 Diamond accent */}
-              <motion.div 
-                className="absolute -top-4 -right-4 w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-r from-emerald-400/80 via-yellow-400/70 to-orange-400/80 shadow-2xl rotate-45 opacity-70"
-                animate={{ 
-                  scale: [1, 1.1, 1],
-                  rotate: [45, 50, 45]
-                }}
-                transition={{ duration: 2.5, repeat: Infinity }}
-              />
+            <div className="relative">
+              {/* Decorative frame offset */}
+              <div className="absolute -bottom-3 -right-3 w-full h-full border-2 border-[#8b1a1a]/20 rounded-2xl" />
+              {/* Photo */}
+              <div className="relative w-64 h-80 lg:w-72 lg:h-[340px] rounded-2xl overflow-hidden border-4 border-white shadow-[0_20px_60px_-10px_rgba(26,26,46,0.18)] bg-[#e8e2d9]">
+                <img
+                  src={photoUrl}
+                  alt={name}
+                  className="w-full h-full object-cover object-top"
+                  data-testid="img-professor"
+                />
+              </div>
+              {/* Accent dot grid */}
+              <div className="absolute -top-5 -left-5 grid grid-cols-3 gap-1.5 opacity-30">
+                {Array.from({ length: 9 }).map((_, i) => (
+                  <div key={i} className="w-1 h-1 rounded-full bg-[#8b1a1a]" />
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }
 
@@ -681,20 +651,13 @@ export default function Home() {
         </motion.section>
       </main>
 
-      <footer className="mt-24 lg:mt-32 bg-gradient-to-r from-slate-900/95 via-blue-900/90 to-indigo-900/95 text-gray-100 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(147,51,234,0.2),transparent_60%)]"></div>
-        <Footer
+      <Footer
           professorName="Dr. S. Neelakandan"
           institution="R.M.K. Engineering College"
           email="drsnk730@gmail.com"
           linkedin="https://linkedin.com"
           youtube="https://youtube.com"
         />
-        {/* <p className="text-center text-sm text-gray-300 py-8 border-t border-white/20 relative z-10">
-          © {new Date().getFullYear()} R.M.K. Engineering College | 
-          <span className="font-semibold text-indigo-300 ml-1">Crafted with 💙 by MOHAMED RIYAZ I</span>
-        </p> */}
-      </footer>
     </div>
   );
 }
