@@ -76,8 +76,8 @@
   --chart-4: 35 85% 55%;
   --chart-5: 280 55% 50%;
 
-  --font-sans: 'DM Sans', system-ui, sans-serif;
-  --font-serif: 'Lora', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: Georgia, serif;
   --font-mono: 'JetBrains Mono', monospace;
   --radius: .5rem; /* 8px */
   --shadow-2xs: 0px 1px 2px 0px hsl(220 20% 20% / 0.05);

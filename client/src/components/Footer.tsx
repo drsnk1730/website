@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { FaLinkedin, FaYoutube } from "react-icons/fa";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface FooterProps {
   professorName: string;
@@ -19,135 +19,134 @@ export default function Footer({
 }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
-  const quickLinks = [
-    { label: "Academics & Experience", href: "/academics" },
-    { label: "Projects", href: "/projects" },
-    { label: "Publications", href: "/publications" },
-    { label: "News", href: "/news" },
-  ];
-
-  const moreLinks = [
-    { label: "Opportunities", href: "/opportunities" },
-    { label: "Research Topics", href: "/research" },
-    { label: "Research Lab", href: "/labs" },
-    { label: "People", href: "/people" },
-  ];
-
   return (
-    <footer className="bg-[#1a1a2e] text-[#d8d0c4]">
-      {/* Top bar accent */}
-      <div className="h-[3px] bg-gradient-to-r from-[#8b1a1a] via-[#c0392b] to-[#8b1a1a]" />
-
-      <div className="container mx-auto px-5 lg:px-10 py-14">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
-
+    <footer className="bg-gradient-to-tr from-slate-800 to-slate-900 text-white border-t border-slate-700">
+      <div className="container mx-auto px-4 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Professor Info */}
-          <div className="lg:col-span-1">
+          <div>
             <h3
-              className="font-['Lora',Georgia,serif] text-xl font-bold text-white mb-1 leading-tight"
+              className="font-bold text-xl mb-4"
               data-testid="text-footer-name"
             >
               {professorName}
             </h3>
-            <div className="w-8 h-[2px] bg-[#8b1a1a] mb-4 rounded-full" />
-            <p className="text-sm text-[#a89880] leading-relaxed mb-4 font-['DM_Sans',sans-serif]">
-              {institution}
-            </p>
-            <a
-              href={`mailto:${email}`}
-              className="flex items-center gap-2 text-sm text-[#c4b8a8] hover:text-white transition-colors duration-200 font-['DM_Sans',sans-serif] group"
-            >
-              <Mail className="w-3.5 h-3.5 text-[#8b1a1a] group-hover:text-[#c0392b] transition-colors" />
-              {email}
-            </a>
+            <p className="text-sm text-slate-300 mb-2">{institution}</p>
+            <p className="text-sm text-slate-300">{email}</p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-['DM_Sans',sans-serif] text-xs font-semibold tracking-[0.15em] uppercase text-[#8b8070] mb-5">
+            <h4 className="font-semibold text-base tracking-wide mb-4">
               Quick Links
             </h4>
-            <ul className="space-y-2.5">
-              {quickLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-[#c4b8a8] hover:text-white transition-colors duration-200 font-['DM_Sans',sans-serif] flex items-center gap-2 group"
-                    data-testid={`link-footer-${link.label.toLowerCase().replace(/\s+/g, "-")}`}
-                  >
-                    <span className="w-1 h-1 rounded-full bg-[#8b1a1a] opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link
+                  href="/academics"
+                  className="relative text-slate-300 hover:text-white transition-colors duration-200 before:absolute before:bottom-0 before:left-0 before:w-0 hover:before:w-full before:h-[1px] before:bg-white before:transition-all"
+                  data-testid="link-footer-academics"
+                >
+                  Academics & Experience
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/projects"
+                  className="relative text-slate-300 hover:text-white transition-colors duration-200 before:absolute before:bottom-0 before:left-0 before:w-0 hover:before:w-full before:h-[1px] before:bg-white before:transition-all"
+                  data-testid="link-footer-projects"
+                >
+                  Projects
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/publications"
+                  className="relative text-slate-300 hover:text-white transition-colors duration-200 before:absolute before:bottom-0 before:left-0 before:w-0 hover:before:w-full before:h-[1px] before:bg-white before:transition-all"
+                  data-testid="link-footer-publications"
+                >
+                  Publications
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* More Links */}
           <div>
-            <h4 className="font-['DM_Sans',sans-serif] text-xs font-semibold tracking-[0.15em] uppercase text-[#8b8070] mb-5">
+            <h4 className="font-semibold text-base tracking-wide mb-4">
               More
             </h4>
-            <ul className="space-y-2.5">
-              {moreLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-[#c4b8a8] hover:text-white transition-colors duration-200 font-['DM_Sans',sans-serif] flex items-center gap-2 group"
-                    data-testid={`link-footer-${link.label.toLowerCase().replace(/\s+/g, "-")}`}
-                  >
-                    <span className="w-1 h-1 rounded-full bg-[#8b1a1a] opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link
+                  href="/opportunities"
+                  className="relative text-slate-300 hover:text-white transition-colors duration-200 before:absolute before:bottom-0 before:left-0 before:w-0 hover:before:w-full before:h-[1px] before:bg-white before:transition-all"
+                  data-testid="link-footer-opportunities"
+                >
+                  Opportunities
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/honors"
+                  className="relative text-slate-300 hover:text-white transition-colors duration-200 before:absolute before:bottom-0 before:left-0 before:w-0 hover:before:w-full before:h-[1px] before:bg-white before:transition-all"
+                  data-testid="link-footer-honors"
+                >
+                  Honors
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/research"
+                  className="relative text-slate-300 hover:text-white transition-colors duration-200 before:absolute before:bottom-0 before:left-0 before:w-0 hover:before:w-full before:h-[1px] before:bg-white before:transition-all"
+                  data-testid="link-footer-research"
+                >
+                  Research Topics
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Connect */}
+          {/* Social Icons */}
           <div>
-            <h4 className="font-['DM_Sans',sans-serif] text-xs font-semibold tracking-[0.15em] uppercase text-[#8b8070] mb-5">
+            <h4 className="font-semibold text-base tracking-wide mb-4">
               Connect
             </h4>
-            <div className="flex gap-3">
+            <div className="flex gap-4">
               {linkedin && (
-                <a
-                  href={linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="hover:scale-110 hover:bg-slate-700 transition-transform duration-200 border-slate-600 text-white"
+                  asChild
                   data-testid="button-footer-linkedin"
-                  className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-[#c4b8a8] hover:text-white hover:bg-[#8b1a1a] hover:border-[#8b1a1a] transition-all duration-200"
-                  aria-label="LinkedIn"
                 >
-                  <FaLinkedin className="w-4 h-4" />
-                </a>
+                  <a href={linkedin} target="_blank" rel="noopener noreferrer">
+                    <FaLinkedin className="h-5 w-5" />
+                  </a>
+                </Button>
               )}
               {youtube && (
-                <a
-                  href={youtube}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="hover:scale-110 hover:bg-slate-700 transition-transform duration-200 border-slate-600 text-white"
+                  asChild
                   data-testid="button-footer-youtube"
-                  className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-[#c4b8a8] hover:text-white hover:bg-[#8b1a1a] hover:border-[#8b1a1a] transition-all duration-200"
-                  aria-label="YouTube"
                 >
-                  <FaYoutube className="w-4 h-4" />
-                </a>
+                  <a href={youtube} target="_blank" rel="noopener noreferrer">
+                    <FaYoutube className="h-5 w-5" />
+                  </a>
+                </Button>
               )}
             </div>
           </div>
         </div>
 
-        {/* Divider & copyright */}
-        <div className="border-t border-white/8 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-3">
-          <p
-            className="text-xs text-[#7a7060] font-['DM_Sans',sans-serif]"
-            data-testid="text-copyright"
-          >
+        {/* Footer Bottom */}
+        <div className="border-t border-slate-700 mt-12 pt-8 text-center text-sm text-slate-400">
+          <p data-testid="text-copyright">
             © {currentYear} {professorName}. All rights reserved.
-          </p>
-          <p className="text-xs text-[#5a5248] font-['DM_Sans',sans-serif]">
-            {institution}
           </p>
         </div>
       </div>
