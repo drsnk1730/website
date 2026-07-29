@@ -1,0 +1,10 @@
+* [33ma7ef624[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m news up
+* [33m59a353a[m :wqRevert "redesign: new navbar, footer, hero — navy/ivory/burgundy palette, Lora + DM Sans fonts"
+* [33md099e5c[m redesign: new navbar, footer, hero — navy/ivory/burgundy palette, Lora + DM Sans fonts
+* [33m6b2023a[m fix: configure vercel build output and SPA rewrite for 404 on refresh
+* [33m81e20bf[m fix: add vercel.json to fix SPA 404 on page refresh
+* [33m71f817f[m removed honours
+* [33m8fe0511[m up
+* [33m1ac8d39[m UPNEWS
+* [33m88b106f[m upnews
+* [33m8cc22e3[m upnews
