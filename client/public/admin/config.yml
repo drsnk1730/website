@@ -1,0 +1,69 @@
+# Decap CMS Configuration for Dr. S. Neelakandan Portfolio
+# ─────────────────────────────────────────────────────────
+
+backend:
+  name: github
+  repo: drsnk1730/website
+  branch: main
+  auth_type: pkce
+  app_id: Ov23lizyni2M1NdiWDnG
+
+media_folder: "client/public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "news"
+    label: "News"
+    label_singular: "News Post"
+    folder: "client/src/content/news"
+    create: true
+    delete: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    sortable_fields: ["date", "title"]
+    view_filters:
+      - label: "Events"
+        field: category
+        pattern: "Events"
+      - label: "Achievements"
+        field: category
+        pattern: "Achievements"
+      - label: "Publications"
+        field: category
+        pattern: "Publications"
+      - label: "Lab News"
+        field: category
+        pattern: "Lab News"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+
+      - label: "Date"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "MMMM D, YYYY"
+        time_format: false
+
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Events",        value: "Events" }
+          - { label: "Achievements",  value: "Achievements" }
+          - { label: "Publications",  value: "Publications" }
+          - { label: "Lab News",      value: "Lab News" }
+        default: "Events"
+
+      - label: "Cover Image"
+        name: "cover"
+        widget: "image"
+        required: false
+
+      - label: "Summary"
+        name: "summary"
+        widget: "text"
+
+      - label: "Body"
+        name: "body"
+        widget: "markdown"

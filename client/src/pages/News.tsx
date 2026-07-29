@@ -1,4 +1,6 @@
-import { useState } from "react"
+import { useState, useMemo } from "react"
+import { marked } from "marked"
+import { loadAllNewsPosts } from "@/lib/parseMarkdown"
 import nara21 from "@assets/nara21.png";
 import nara22 from "@assets/nara22.png";
 import nara23 from "@assets/nara23.png";
@@ -136,7 +138,8 @@ import scimeTechImg1 from "@assets/key1.png";
 import scimeTechImg2 from "@assets/key2.png";
 
 export default function News() {
-  const [selectedImage, setSelectedImage] = useState(null)
+  const [selectedImage, setSelectedImage] = useState<string | null>(null)
+  const cmsPosts = useMemo(() => loadAllNewsPosts(), [])
   return (
     <div className="max-w-6xl mx-auto px-6 space-y-14">
 
@@ -1390,7 +1393,62 @@ export default function News() {
         </div>
       )}
 
-
+      {/* CMS-Managed News Posts — loaded from src/content/news/*.md */}
+      {cmsPosts.length > 0 && (
+        <div className="mt-16">
+          <div className="mb-10">
+            <h2 className="text-3xl font-bold text-slate-900 mb-2">Latest Updates</h2>
+            <p className="text-slate-500 text-sm">Posts managed via the CMS — sorted newest first.</p>
+            <div className="mt-4 h-0.5 bg-gradient-to-r from-blue-500 to-transparent rounded-full" />
+          </div>
+          <div className="space-y-10">
+            {cmsPosts.map((post) => (
+              <article
+                key={post.slug}
+                className="rounded-3xl bg-white px-6 py-10 shadow-2xl ring-1 ring-gray-200 transition-shadow hover:shadow-3xl"
+              >
+                <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+                  <span className="inline-block bg-blue-600 text-white text-xs font-bold tracking-widest px-3 py-1 rounded-full uppercase">
+                    {post.category}
+                  </span>
+                  <time dateTime={post.date} className="text-sm font-semibold text-slate-500">
+                    {new Date(post.date + "T00:00:00").toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </time>
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">{post.title}</h3>
+                {post.summary && (
+                  <p className="text-slate-600 text-[15px] leading-relaxed mb-6">{post.summary}</p>
+                )}
+                {post.cover && (
+                  <div
+                    className="cursor-pointer group relative overflow-hidden rounded-2xl shadow-xl mb-6 transition duration-500 hover:-translate-y-1 hover:scale-[1.02] max-w-2xl"
+                    onClick={() => setSelectedImage(post.cover!)}
+                  >
+                    <img
+                      src={post.cover}
+                      alt={post.title}
+                      className="w-full max-h-[420px] object-cover bg-gray-50 rounded-2xl"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition duration-300 flex items-center justify-center rounded-2xl">
+                      <span className="text-white opacity-0 group-hover:opacity-100 font-semibold text-lg">View</span>
+                    </div>
+                  </div>
+                )}
+                {post.body && (
+                  <div
+                    className="prose prose-slate max-w-none text-slate-700 leading-relaxed"
+                    dangerouslySetInnerHTML={{ __html: marked.parse(post.body) as string }}
+                  />
+                )}
+              </article>
+            ))}
+          </div>
+        </div>
+      )}
 
     </div>
   );
