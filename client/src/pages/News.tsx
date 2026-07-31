@@ -143,6 +143,43 @@ export default function News() {
   return (
     <div className="max-w-6xl mx-auto px-6 space-y-14">
 
+      {/* Osaka Metropolitan University Section */}
+      <div className="mt-16 rounded-3xl bg-white px-6 py-10 shadow-2xl ring-1 ring-gray-200">
+        <h3 className="text-3xl font-bold mb-4 text-center text-purple-800">
+          Visit and Discussion at Osaka Metropolitan University, Japan
+        </h3>
+        <p className="text-gray-700 text-justify leading-relaxed mb-6">
+          💫 Happy to have met and had a discussion with <span className="font-semibold text-purple-700">Prof. Yusuke Nojima</span>, Professor and Vice Dean, Graduate School of Informatics, <span className="font-semibold">Osaka Metropolitan University, Japan</span>, during my visit on 2nd July 2026.
+        </p>
+        <p className="text-gray-700 text-justify leading-relaxed mb-6">
+          I sincerely thank him for his kind invitation to visit the university and for the valuable discussion on potential collaboration related to <span className="font-semibold">human-centered and interpretable computational intelligence</span>. I also extend my sincere thanks to <span className="font-semibold">Prof. Lynn Pickering</span> for joining this collaboration discussion.
+        </p>
+        <p className="text-gray-700 text-justify leading-relaxed mb-8">
+          I am grateful for their valuable time and for this wonderful meeting. Looking forward to future academic and research collaborations.
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {["/uploads/1783256303613.jpg", "/uploads/1783256303718.jpg", "/uploads/1783256303818.jpg"].map((img, idx) => (
+            <div
+              key={idx}
+              onClick={() => setSelectedImage(img)}
+              className="cursor-pointer group relative overflow-hidden rounded-2xl shadow-xl transition duration-500 hover:-translate-y-2 hover:scale-105"
+            >
+              <img
+                src={img}
+                alt={`Osaka Metropolitan University Visit ${idx + 1}`}
+                className="w-full h-72 object-cover bg-gray-50 rounded-2xl"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition duration-300 flex items-center justify-center">
+                <span className="text-white opacity-0 group-hover:opacity-100 font-semibold text-lg">
+                  View
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Nara Institute of Science and Technology Lecture Section */}
       <div className="mt-16 rounded-3xl bg-white px-6 py-10 shadow-2xl ring-1 ring-gray-200">
         <h3 className="text-3xl font-bold mb-4 text-center text-red-800">
@@ -1389,63 +1426,6 @@ export default function News() {
               className="w-full max-h-[90vh] object-contain rounded-xl shadow-2xl bg-white"
             />
 
-          </div>
-        </div>
-      )}
-
-      {/* CMS-Managed News Posts — loaded from src/content/news/*.md */}
-      {cmsPosts.length > 0 && (
-        <div className="mt-16">
-          <div className="mb-10">
-            <h2 className="text-3xl font-bold text-slate-900 mb-2">Latest Updates</h2>
-            <p className="text-slate-500 text-sm">Posts managed via the CMS — sorted newest first.</p>
-            <div className="mt-4 h-0.5 bg-gradient-to-r from-blue-500 to-transparent rounded-full" />
-          </div>
-          <div className="space-y-10">
-            {cmsPosts.map((post) => (
-              <article
-                key={post.slug}
-                className="rounded-3xl bg-white px-6 py-10 shadow-2xl ring-1 ring-gray-200 transition-shadow hover:shadow-3xl"
-              >
-                <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-                  <span className="inline-block bg-blue-600 text-white text-xs font-bold tracking-widest px-3 py-1 rounded-full uppercase">
-                    {post.category}
-                  </span>
-                  <time dateTime={post.date} className="text-sm font-semibold text-slate-500">
-                    {new Date(post.date + "T00:00:00").toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}
-                  </time>
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">{post.title}</h3>
-                {post.summary && (
-                  <p className="text-slate-600 text-[15px] leading-relaxed mb-6">{post.summary}</p>
-                )}
-                {post.cover && (
-                  <div
-                    className="cursor-pointer group relative overflow-hidden rounded-2xl shadow-xl mb-6 transition duration-500 hover:-translate-y-1 hover:scale-[1.02] max-w-2xl"
-                    onClick={() => setSelectedImage(post.cover!)}
-                  >
-                    <img
-                      src={post.cover}
-                      alt={post.title}
-                      className="w-full max-h-[420px] object-cover bg-gray-50 rounded-2xl"
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition duration-300 flex items-center justify-center rounded-2xl">
-                      <span className="text-white opacity-0 group-hover:opacity-100 font-semibold text-lg">View</span>
-                    </div>
-                  </div>
-                )}
-                {post.body && (
-                  <div
-                    className="prose prose-slate max-w-none text-slate-700 leading-relaxed"
-                    dangerouslySetInnerHTML={{ __html: marked.parse(post.body) as string }}
-                  />
-                )}
-              </article>
-            ))}
           </div>
         </div>
       )}
