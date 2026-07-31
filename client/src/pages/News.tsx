@@ -180,6 +180,56 @@ export default function News() {
         </div>
       </div>
 
+
+      {/* CMS-Managed News Posts — future posts published via /admin appear here */}
+      {cmsPosts
+        .filter(post => post.slug !== "2026-07-01-visit-and-discussion-at-osaka-metropolitan-university-japan"
+          && post.slug !== "2026-07-01-nara-lecture")
+        .map((post) => (
+          <article
+            key={post.slug}
+            className="rounded-3xl bg-white px-6 py-10 shadow-2xl ring-1 ring-gray-200 transition-shadow hover:shadow-3xl"
+          >
+            <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+              <span className="inline-block bg-blue-600 text-white text-xs font-bold tracking-widest px-3 py-1 rounded-full uppercase">
+                {post.category}
+              </span>
+              <time dateTime={post.date} className="text-sm font-semibold text-slate-500">
+                {new Date(post.date + "T00:00:00").toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </time>
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">{post.title}</h3>
+            {post.summary && (
+              <p className="text-slate-600 text-[15px] leading-relaxed mb-6">{post.summary}</p>
+            )}
+            {post.cover && (
+              <div
+                className="cursor-pointer group relative overflow-hidden rounded-2xl shadow-xl mb-6 transition duration-500 hover:-translate-y-2 hover:scale-105"
+                onClick={() => setSelectedImage(post.cover!)}
+              >
+                <img
+                  src={post.cover}
+                  alt={post.title}
+                  className="w-full max-h-[480px] object-cover bg-gray-50 rounded-2xl"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition duration-300 flex items-center justify-center rounded-2xl">
+                  <span className="text-white opacity-0 group-hover:opacity-100 font-semibold text-lg">View</span>
+                </div>
+              </div>
+            )}
+            {post.body && (
+              <div
+                className="prose prose-slate max-w-none text-slate-700 leading-relaxed prose-img:rounded-2xl prose-img:shadow-xl prose-img:w-full"
+                dangerouslySetInnerHTML={{ __html: marked.parse(post.body) as string }}
+              />
+            )}
+          </article>
+        ))}
+
       {/* Nara Institute of Science and Technology Lecture Section */}
       <div className="mt-16 rounded-3xl bg-white px-6 py-10 shadow-2xl ring-1 ring-gray-200">
         <h3 className="text-3xl font-bold mb-4 text-center text-red-800">
