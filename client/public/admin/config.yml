@@ -5,7 +5,7 @@ backend:
   name: github
   repo: drsnk1730/website
   branch: main
-  base_url: ""               # Uses the current domain
+  base_url: "https://www.drsneelakandan.com"
   auth_endpoint: "api/auth"  # Points to our Vercel Serverless function
 
 media_folder: "client/public/uploads"
