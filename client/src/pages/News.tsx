@@ -136,12 +136,102 @@ import jp5 from "@assets/ai5.png";
 
 import scimeTechImg1 from "@assets/key1.png";
 import scimeTechImg2 from "@assets/key2.png";
+import kansai1 from "@assets/kansai1.png";
+import kansai2 from "@assets/kansai2.png";
+import kansai3 from "@assets/kansai3.png";
+import horizon1 from "@assets/horizon1.png";
+import horizon2 from "@assets/horizon2.png";
+import horizon3 from "@assets/horizon3.png";
+import horizon4 from "@assets/horizon4.png";
 
 export default function News() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
   const cmsPosts = useMemo(() => loadAllNewsPosts(), [])
   return (
     <div className="max-w-6xl mx-auto px-6 space-y-14">
+
+      {/* AI Horizons Foresight Report Section */}
+      <div className="mt-16 rounded-3xl bg-white px-6 py-10 shadow-2xl ring-1 ring-gray-200">
+        <h3 className="text-3xl font-bold mb-4 text-center text-blue-800">
+          AI Horizons: The Next Frontiers of Artificial Intelligence
+        </h3>
+        <p className="text-gray-700 text-justify leading-relaxed mb-6">
+          💫 I am delighted to share that the foresight report from <span className="font-semibold text-blue-700">"AI Horizons: The Next Frontiers of Artificial Intelligence"</span> has been released.
+        </p>
+        <p className="text-gray-700 text-justify leading-relaxed mb-6">
+          It was a great honour to participate in this global foresight initiative and contribute my perspectives on <span className="font-semibold">Security, Trust, and Explainability in Artificial Intelligence</span>. The scientific discussion brought together <span className="font-semibold text-blue-700">270 AI researchers from more than 36 countries</span> to explore an important question:
+        </p>
+        <blockquote className="border-l-4 border-blue-400 pl-5 italic text-blue-900 font-semibold text-lg mb-6">
+          What will artificial intelligence technologies look like over the next ten years?
+        </blockquote>
+        <p className="text-gray-700 text-justify leading-relaxed mb-6">
+          I am also pleased to join the <span className="font-semibold text-blue-700">AI Alliance Network Scientific Club</span>, a global community of researchers established within the AI Alliance Network. The Club will provide opportunities for leading researchers from different countries to exchange expertise, develop collaborative research initiatives, strengthen long-term international scientific cooperation, and transform scholarly dialogue into meaningful outcomes.
+        </p>
+        <p className="text-gray-700 text-justify leading-relaxed mb-8">
+          I look forward to contributing actively to this international research community and supporting collaborative efforts toward secure, trustworthy, explainable, and socially responsible artificial intelligence. 💫
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {[horizon1, horizon2, horizon3, horizon4].map((img, idx) => (
+            <div
+              key={idx}
+              onClick={() => setSelectedImage(img)}
+              className="cursor-pointer group relative overflow-hidden rounded-2xl shadow-xl transition duration-500 hover:-translate-y-2 hover:scale-105"
+            >
+              <img
+                src={img}
+                alt={`AI Horizons Report ${idx + 1}`}
+                className="w-full h-72 object-cover bg-gray-50 rounded-2xl"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition duration-300 flex items-center justify-center">
+                <span className="text-white opacity-0 group-hover:opacity-100 font-semibold text-lg">
+                  View
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Kansai University Section */}
+      <div className="mt-16 rounded-3xl bg-white px-6 py-10 shadow-2xl ring-1 ring-gray-200">
+        <h3 className="text-3xl font-bold mb-4 text-center text-violet-800">
+          Visit and Discussion at Kansai University, Japan
+        </h3>
+        <p className="text-gray-700 text-justify leading-relaxed mb-6">
+          💫 Happy to have met <span className="font-semibold text-violet-700">Prof. Yuki Maruno</span>, Associate Professor, Faculty of Business Data Science, <span className="font-semibold">Kansai University, Japan</span>, on 3rd July 2026.
+        </p>
+        <p className="text-gray-700 text-justify leading-relaxed mb-6">
+          I am very grateful to Prof. Yuki Maruno for her kind invitation, warm hospitality, and valuable time during my visit. We had a fruitful and meaningful discussion on strengthening academic and research collaboration between <span className="font-semibold">R.M.K. Engineering College</span> and <span className="font-semibold">Kansai University</span>.
+        </p>
+        <p className="text-gray-700 text-justify leading-relaxed mb-6">
+          The discussion focused on several potential collaborative activities for the forthcoming years. Such collaborations will provide a strong platform for students and faculty members to gain international exposure, exchange innovative ideas, and explore interdisciplinary research possibilities.
+        </p>
+        <p className="text-gray-700 text-justify leading-relaxed mb-8">
+          I sincerely appreciate Prof. Yuki Maruno's support and interest in building this academic partnership. Looking forward to developing a meaningful and long-term collaboration between R.M.K. Engineering College and Kansai University, Japan. 💐
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[kansai1, kansai2, kansai3].map((img, idx) => (
+            <div
+              key={idx}
+              onClick={() => setSelectedImage(img)}
+              className="cursor-pointer group relative overflow-hidden rounded-2xl shadow-xl transition duration-500 hover:-translate-y-2 hover:scale-105"
+            >
+              <img
+                src={img}
+                alt={`Kansai University Visit ${idx + 1}`}
+                className="w-full h-72 object-cover bg-gray-50 rounded-2xl"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition duration-300 flex items-center justify-center">
+                <span className="text-white opacity-0 group-hover:opacity-100 font-semibold text-lg">
+                  View
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* Osaka Metropolitan University Section */}
       <div className="mt-16 rounded-3xl bg-white px-6 py-10 shadow-2xl ring-1 ring-gray-200">
